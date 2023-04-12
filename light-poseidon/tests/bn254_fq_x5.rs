@@ -90,7 +90,7 @@ fn test_poseidon_bn254_x5_fq_hash_bytes() {
 }
 
 // test cases were created with circomlibjs poseidon([1, ...]) for 1 to 16 inputs
-const TEST_CASES: [[u8; 32]; 15] = [
+const TEST_CASES: [[u8; 32]; 16] = [
     [
         41, 23, 97, 0, 234, 169, 98, 189, 193, 254, 108, 101, 77, 106, 60, 19, 14, 150, 164, 209,
         22, 139, 51, 132, 139, 137, 125, 197, 2, 130, 1, 51,
@@ -151,6 +151,10 @@ const TEST_CASES: [[u8; 32]; 15] = [
         27, 225, 209, 175, 237, 11, 90, 129, 139, 218, 5, 21, 20, 49, 65, 35, 218, 22, 99, 154,
         152, 243, 138, 136, 36, 39, 1, 149, 158, 199, 205, 61,
     ],
+    [
+        35, 235, 143, 111, 217, 66, 220, 208, 175, 10, 19, 232, 111, 181, 60, 252, 121, 177, 148,
+        13, 210, 181, 154, 155, 141, 8, 85, 118, 43, 126, 211, 142,
+    ],
 ];
 
 #[test]
@@ -175,7 +179,7 @@ fn test_circom_1_to_12_inputs() {
 
 #[cfg(not(feature = "width_limit_13"))]
 #[test]
-fn test_circom_13_to_15_inputs() {
+fn test_circom_13_to_16_inputs() {
     let mut inputs = Vec::new();
     let value = [vec![0u8; 31], vec![1u8]].concat();
     for _ in 1..13 {

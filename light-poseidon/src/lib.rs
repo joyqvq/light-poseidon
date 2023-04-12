@@ -10,8 +10,8 @@
 //! Parameters provided by the library are:
 //!
 //! * x^5 S-boxes
-//! * t = 2 - 17 (for 1 to 15 inputs)
-//! * 8 full rounds and partial rounds depending on t [56, 57, 56, 60, 60, 63, 64, 63, 60, 66, 60, 65, 70, 60, 64]
+//! * t = 2 - 17 (for 1 to 16 inputs)
+//! * 8 full rounds and partial rounds depending on t [56, 57, 56, 60, 60, 63, 64, 63, 60, 66, 60, 65, 70, 60, 64, 68]
 //! The parameters can be generated with:
 //! ```$ cargo xtask generate-poseidon-parameters``
 //! # Output type
@@ -172,7 +172,7 @@ use thiserror::Error;
 pub mod parameters;
 
 pub const HASH_LEN: usize = 32;
-pub const MAX_X5_LEN: usize = 16;
+pub const MAX_X5_LEN: usize = 17;
 
 #[derive(Error, Debug, PartialEq)]
 pub enum PoseidonError {
